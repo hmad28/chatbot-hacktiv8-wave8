@@ -67,6 +67,18 @@ app.post('/generate-text', async (req, res) => {
     }
 });
 
+app.post("/api/chat", async (req, res) => {
+    const { conversation } = req.body;
+
+    try {
+        if (Array.isArray(conversation)) {
+            throw new Error("Conversation harus berupa array!");
+        }
+    } catch (e) {
+
+    }
+})
+
 app.listen(3000, () => {
     console.log('Server berjalan pada http://localhost:3000');
 });
