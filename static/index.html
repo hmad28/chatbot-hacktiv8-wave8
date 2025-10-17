@@ -4,17 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gemini AI Chatbot</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Gemini AI Chatbot</h1>
-    <div id="chat-box" class="chat-box"></div>
-    <form id="chat-form">
-      <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
-      <button type="submit">Send</button>
-    </form>
+    <div class="header">
+      <h1>✨ H-Mate AI Assistant</h1>
+      <p>Tanya apa saja, saya siap membantu!</p>
+    </div>
+    
+    <div id="chat-box" class="chat-box">
+      <div class="empty-state">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <p>Mulai percakapan dengan mengetik pesan...</p>
+      </div>
+    </div>
+    
+    <div class="input-container">
+      <form id="chat-form">
+        <input type="text" id="user-input" placeholder="Ketik pesan Anda..." autocomplete="off" required />
+        <button type="submit" id="send-btn">Kirim</button>
+      </form>
+    </div>
   </div>
-  <script src="script.js"></script>
+
+  <script src="/script.js"></script>
 </body>
 </html>
