@@ -3,17 +3,30 @@ import cors from 'cors';
 import multer from 'multer';
 import { GoogleGenAI } from '@google/genai';
 
+import path from 'node:path'; // sesi 5
+import { fileURLToPath } from 'node:url'; // sesi 5
+
 import 'dotenv/config';
 
-// inisialisasi express
 
+
+// inisialisasi express
 const app = express();
 const upload = multer();
 
 const ai = new GoogleGenAI({ });
 
+const __filename = fileURLToPath(import.meta.url); // sesi 5
+const __dirname = path.dirname(__filename); // sesi 5
+
 app.use(cors());
 app.use(express.json())
+
+app.use(
+    express.static(
+        path.join(__dirname, "static")
+    ),
+); // sesi 5
 
 app.post('/generate-text', async (req, res) => { 
     const { prompt } = req.body;
